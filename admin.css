@@ -1,0 +1,65 @@
+.admin-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.controles-admin {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.controles-admin select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.pregunta-card {
+    background: #ffffff;
+    padding: 25px 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    text-align: left;
+    border-left: 5px solid #1a73e8;
+}
+
+.pregunta-card h3 {
+    color: #555;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.pregunta-card p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+}
+
+.btn-cambiar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #f4b400; /* Amarillo para el reroll */
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: auto;
+    margin-top: 0;
+}
+
+.btn-cambiar:active {
+    background-color: #e0a600;
+}

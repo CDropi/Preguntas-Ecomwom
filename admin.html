@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Recursos/rayo.png">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header>
+            <h1>Panel de Moderación</h1>
+            <p>Filtra las preguntas antes de enviarlas a pantalla</p>
+        </header>
+
+        <div class="controles-admin">
+            <select id="select-ponente">
+                <option value="Ponente 1">Ponente 1</option>
+                <option value="Ponente 2">Ponente 2</option>
+            </select>
+            <button onclick="iniciarCarga()" style="width: auto; margin-top: 0;">Traer Preguntas al Azar</button>
+            <button id="btn-proyectar" onclick="proyectarAPantalla()" style="background-color: #0f9d58; width: auto;">🚀 Proyectar en Pantalla</button>
+        </div>
+
+        <div id="pantalla-preguntas">
+            <p>Selecciona un ponente y presiona el botón para comenzar.</p>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

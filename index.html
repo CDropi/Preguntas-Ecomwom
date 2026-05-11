@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Recursos/rayo.png">
+    <title>Preguntas a la Ponente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <img src="Recursos/Logo.png" alt="Logo Ecomwom" class="img-logo">
+        <h1>Haz tu pregunta</h1>
+        <p>Selecciona al ponente que está en tarima</p>
+    </header>
+
+    <main>
+        <div id="contenedor-ponentes" class="grid-ponentes">
+            
+            <div class="tarjeta-ponente" id="card-Ponente 1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHdLZAJzeEA2iYjsrN4CEXrg8ATQ1tB04blQ&s" alt="Foto Ponente 1">
+                <h2>Juana Pérez</h2>
+                <button id="btn-Ponente 1" onclick="abrirFormulario('Ponente 1')">Preguntar a Juan</button>
+            </div>
+
+            <div class="tarjeta-ponente" id="card-Ponente 2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpUAAT12ROzUrJj9wazmTCbvjGtLIcpe7QNg&s" alt="Foto Ponente 2">
+                <h2>María Gómez</h2>
+                <button id="btn-Ponente 2" onclick="abrirFormulario('Ponente 2')">Preguntar a María</button>
+            </div>
+
+        </div>
+
+        <div id="modal-formulario" style="display: none;">
+            <h3 id="titulo-formulario">Pregunta para...</h3>
+            <input type="text" id="input-nombre" placeholder="Tu Nombre" required>
+            <input type="tel" id="input-telefono" placeholder="Tu Teléfono" required>
+            <textarea id="input-pregunta" placeholder="Escribe tu pregunta aquí..." required></textarea>
+            <button onclick="enviarDatos()">Enviar Pregunta</button>
+            <button onclick="cerrarFormulario()">Cancelar</button>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
