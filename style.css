@@ -58,7 +58,7 @@ header p {
 }
 
 .img-logo{
-    max-width: 200px;
+    max-width: 150px;
     height: auto;
     margin-bottom: 15px;
 }
@@ -84,6 +84,22 @@ header p {
     background: transparent;
     box-shadow: none;
     padding: 0;
+}
+
+.decoracion1-3d {
+    position: absolute;
+    width: 100px; /* Ajusta el tamaño de los gráficos aquí */
+    height: auto;
+    
+    /* Posición por defecto (Asoma por arriba a la derecha) */
+    top: -45px; 
+    right: -50px; 
+    
+    z-index: 0; /* ¡La clave! Se queda detrás del cartón crema (que tiene z-index: 1) */
+    pointer-events: none; /* Para que no interfiera si el usuario hace clic por ahí */
+    
+    /* Un pequeño detalle de ingeniero: le damos una sombra suave al 3D contra el fondo general */
+    filter: drop-shadow(0px 15px 15px rgba(0,0,0,0.1));
 }
 
 .foto-ponente {

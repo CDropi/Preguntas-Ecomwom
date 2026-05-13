@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function actualizarInterfaz() {
     // Estos nombres deben ser exactamente iguales a los IDs que pusiste en el HTML
-    const ponentes = ["Ponente 1", "Ponente 2"]; 
+    const ponentes = ["Ana María", "Issa Vásquez"]; 
     
     ponentes.forEach(p => {
         // Revisamos la memoria del celular (localStorage)
