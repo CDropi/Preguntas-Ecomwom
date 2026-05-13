@@ -43,7 +43,7 @@ body {
 }
 
 header {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 header h1 {
@@ -68,7 +68,7 @@ header p {
 .img-logo{
     max-width: 150px;
     height: auto;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 /* Contenedor adaptativo para las tarjetas */
@@ -131,7 +131,7 @@ header p {
     top: -45px; 
     left: 50%;
     transform: translateX(-50%);
-    width: 130px !important; /* Forzamos el tamaño para evitar que se desborde */
+    width: 170px !important; /* Forzamos el tamaño para evitar que se desborde */
     height: auto !important;
     z-index: 2;
     filter: drop-shadow(0px 8px 10px rgba(0,0,0,0.2)); 
