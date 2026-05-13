@@ -110,6 +110,22 @@ header p {
     filter: drop-shadow(0px 15px 15px rgba(0,0,0,0.1));
 }
 
+.decoracion2-3d {
+    position: absolute;
+    width: 100px; /* Ajusta el tamaño de los gráficos aquí */
+    height: auto;
+    
+    /* Posición por defecto (Asoma por arriba a la derecha) */
+    bottom: -30px; 
+    left: -35px; 
+    
+    z-index: 0; /* ¡La clave! Se queda detrás del cartón crema (que tiene z-index: 1) */
+    pointer-events: none; /* Para que no interfiera si el usuario hace clic por ahí */
+    
+    /* Un pequeño detalle de ingeniero: le damos una sombra suave al 3D contra el fondo general */
+    filter: drop-shadow(0px 15px 15px rgba(0,0,0,0.1));
+}
+
 .foto-ponente {
     position: absolute;
     top: -45px; 
