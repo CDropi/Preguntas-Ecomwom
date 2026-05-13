@@ -126,6 +126,17 @@ header p {
     filter: drop-shadow(0px 15px 15px rgba(0,0,0,0.1));
 }
 
+/* Animación de flotación infinita */
+.decoracion1-3d, .decoracion2-3d {
+    animation: flotar3D 4s ease-in-out infinite;
+}
+
+@keyframes flotar3D {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(15deg); } /* Sube un poquito y gira levemente */
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
 .foto-ponente {
     position: absolute;
     top: -45px; 
