@@ -1,14 +1,35 @@
+@font-face {
+    font-family: 'MazzardBoldEcomwom';
+    src: url('Recursos/MazzardH-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MazzardRegularEcomwom';
+    src: url('Recursos/MazzardH-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AminuteEcomwom';
+    src: url('Recursos/Aminute.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Reseteo básico y tipografía */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'MazzardRegularEcomwom', Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
     background-color: #F4DCFC;
-    color: #333;
+    color: #252324;
     text-align: center;
     padding: 20px;
 }
@@ -18,8 +39,22 @@ header {
 }
 
 header h1 {
-    color: #1a73e8;
-    margin-bottom: 5px;
+    font-family: 'MazzardBoldEcomwom', Arial, sans-serif;
+    color: #FE5C2B;
+    /*margin-bottom: 5px;*/
+    font-size: 2.6em;
+}
+
+header p {
+    font-size: 0.86em;
+}
+
+.palabra-resaltada {
+    font-family: 'AminuteEcomwom', sans-serif; /* Asegúrate de usar el mismo nombre que pusiste en el @font-face */
+    
+    /* Como Aminute tiene proporciones distintas a Mazzard, a veces hay que ajustar su tamaño */
+    font-size: 0.9em; /* Hace que esta palabra sea un 10% más grande que el resto del h1 */
+    
 }
 
 .img-logo{
@@ -31,43 +66,86 @@ header h1 {
 /* Contenedor adaptativo para las tarjetas */
 .grid-ponentes {
     display: grid;
-    /* Esto hace que en celular se vea 1 columna y en PC varias */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 35px;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 20px 20px 20px;
+    position: relative;
+    z-index: 10; /* Asegura que las tarjetas estén siempre al frente */
 }
 
 /* Diseño individual de la tarjeta */
 .tarjeta-ponente {
-    background: #FFFBF0;
-    border-radius: 12px;
-    padding: 25px 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.2s;
+    position: relative;
+    margin-top: 30px; /* Espacio para la cabeza flotante */
+    transform: rotate(-4deg); /* Inclinación ECOMWOM */
+    transition: transform 0.3s ease;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
 }
 
-.tarjeta-ponente img {
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border: 3px solid #e8eaed;
+.foto-ponente {
+    position: absolute;
+    top: -45px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px !important; /* Forzamos el tamaño para evitar que se desborde */
+    height: auto !important;
+    z-index: 2;
+    filter: drop-shadow(0px 8px 10px rgba(0,0,0,0.2)); 
+    pointer-events: none; 
+}
+
+.tarjeta-fondo {
+    background: #FFFBF0; /* Color crema del Brand Book */
+    border-radius: 20px;
+    padding: 110px 10px 20px;     
+    box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+    position: relative;
+    z-index: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%; 
+}
+
+.tarjeta-fondo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%; /* Controla qué tan arriba llega la "niebla" */
+    background: linear-gradient(to bottom, rgba(255, 251, 240, 0) 0%, rgba(255, 251, 240, 1) 50%, rgba(255, 251, 240, 1) 100%);    
+    border-radius: 0 0 20px 20px;
+    z-index: 3; /* Se dibuja por encima de la foto */
+    pointer-events: none; 
+}
+
+.tarjeta-ponente h2 {
+    font-family: 'Elegance', sans-serif;
+    font-size: 16px; 
+    margin-bottom: 10px;
+    color: #252324; /* Color negro del manual de marca */
+    position: relative;
+    z-index: 4;
 }
 
 .tarjeta-ponente button {
     background-color: #FE5C2B;
     color: white;
     border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
+    padding: 10px 5px;
+    border-radius: 50px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: bold;
-    margin-top: 15px;
     width: 100%;
     transition: background-color 0.2s;
+    position: relative;
+    z-index: 4;
 }
 
 .tarjeta-ponente button:active {
@@ -77,11 +155,12 @@ header h1 {
 /* Estado inhabilitado cuando ya preguntaron */
 .tarjeta-ponente button:disabled {
     background-color: #bdc3c7;
+    color: #a09a91;
     cursor: not-allowed;
 }
 
 .tarjeta-ponente.disabled {
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 /* Diseño del formulario emergente */
@@ -109,4 +188,9 @@ header h1 {
 #modal-formulario textarea {
     resize: vertical;
     min-height: 100px;
+}
+
+/* Selecciona solo las tarjetas pares (las de la derecha) y las gira al lado contrario */
+.tarjeta-ponente:nth-child(even) {
+    transform: rotate(4deg); /* Antes era -4deg, ahora es positivo */
 }
