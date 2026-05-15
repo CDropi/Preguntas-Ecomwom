@@ -14,13 +14,13 @@ async function iniciarCarga() {
         const response = await fetch(`${API_URL}?ponente=${ponente}`);
         listaPreguntas = await response.json();
 
-        // Validamos que haya al menos 3 preguntas para jugar
-        if(listaPreguntas.length < 3) {
-            container.innerHTML = `<p>Aún no hay suficientes preguntas para ${ponente}. (Hay ${listaPreguntas.length}/3)</p>`;
+        // Validamos que haya al menos 4 preguntas para jugar
+        if(listaPreguntas.length < 4) {
+            container.innerHTML = `<p>Aún no hay suficientes preguntas para ${ponente}. (Hay ${listaPreguntas.length}/4)</p>`;
             return;
         }
 
-        // Si hay 3 o más, procedemos a seleccionar
+        // Si hay 4 o más, procedemos a seleccionar
         seleccionarAleatorias();
         
     } catch (error) {
@@ -37,15 +37,15 @@ function seleccionarAleatorias() {
     // Desordenamos el arreglo (Shuffle)
     indicesDisponibles.sort(() => Math.random() - 0.5);
     
-    // Tomamos los primeros 3
-    seleccionadas = indicesDisponibles.slice(0, 3);
+    // Tomamos los primeros 4
+    seleccionadas = indicesDisponibles.slice(0, 4);
     
     renderizarPantalla();
 }
 
 function cambiarPregunta(posicionEnPantalla) {
-    // Si tenemos exactamente 3 preguntas en total, no hay por qué cambiar
-    if (listaPreguntas.length <= 3) {
+    // Si tenemos exactamente 4 preguntas en total, no hay por qué cambiar
+    if (listaPreguntas.length <= 4) {
         alert("No hay más preguntas disponibles en la base de datos para sustituir.");
         return;
     }
