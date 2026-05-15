@@ -18,37 +18,39 @@
     <main>
         <div id="contenedor-ponentes" class="grid-ponentes">
             
-            <div class="tarjeta-ponente" id="card-Ponente 1">
+            <div class="tarjeta-ponente" id="card-Ana María">
 
                 <img src="Recursos/Flor.png" alt="Flor 3D" class="decoracion1-3d">
-                <img src="Recursos/AnaMaria.png" alt="Foto Ponente 1" class="foto-ponente">
+                <img src="Recursos/AnaMaria.png" alt="Foto Ana María" class="foto-ponente">
                 
                 <div class="tarjeta-fondo">
                     <h2>Ana María Botero</h2>
-                    <button id="btn-Ponente 1" onclick="abrirFormulario('Ana María')">Preguntar</button>
+                    <button id="btn-Ana María" onclick="abrirFormulario('Ana María')">Preguntar</button>
                 </div>
             </div>
 
-            <div class="tarjeta-ponente" id="card-Ponente 2">
+            <div class="tarjeta-ponente" id="card-Issa Vásquez">
                 
                 <img src="Recursos/Estrella.png" alt="Flor 3D" class="decoracion2-3d">
-                <img src="Recursos/Issa.png" alt="Foto Ponente 2" class="foto-ponente">
+                <img src="Recursos/Issa.png" alt="Foto Issa Vásquez" class="foto-ponente">
                 
                 <div class="tarjeta-fondo">
                     <h2>Issa Vásquez</h2>
-                    <button id="btn-Ponente 2" onclick="abrirFormulario('Issa Vásquez')">Preguntar</button>
+                    <button id="btn-Issa Vásquez" onclick="abrirFormulario('Issa Vásquez')">Preguntar</button>
                 </div>
             </div>
 
         </div>
 
         <div id="modal-formulario" style="display: none;">
+            <img src="Recursos/Flor2.png" alt="Flor2 3D" class="decoracion3-3d">
+            <img src="Recursos/Flor3.png" alt="Flor3 3D" class="decoracion4-3d">
             <h3 id="titulo-formulario">Pregunta para...</h3>
             <input type="text" id="input-nombre" placeholder="Tu Nombre" required>
             <input type="tel" id="input-telefono" placeholder="Tu Teléfono" required>
             <textarea id="input-pregunta" placeholder="Escribe tu pregunta aquí..." required></textarea>
-            <button onclick="enviarDatos()">Enviar Pregunta</button>
-            <button onclick="cerrarFormulario()">Cancelar</button>
+            <button class="button_enviar" onclick="enviarDatos()">Enviar Pregunta</button>
+            <button class="button_cancelar" onclick="cerrarFormulario()">Cancelar</button>
         </div>
     </main>
 

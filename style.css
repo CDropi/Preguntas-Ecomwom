@@ -126,8 +126,28 @@ header p {
     filter: drop-shadow(0px 15px 15px rgba(0,0,0,0.1));
 }
 
+.decoracion3-3d {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    top: -45px;
+    left: -45px;
+    pointer-events: none;
+    filter: drop-shadow(0px 15px 15px rgba(0,0,0,0.1));
+}
+
+.decoracion4-3d {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    bottom: -70px;
+    right: -35px;
+    pointer-events: none;
+    filter: drop-shadow(0px 15px 15px rgba(0,0,0,0.1));
+}
+
 /* Animación de flotación infinita */
-.decoracion1-3d, .decoracion2-3d {
+.decoracion1-3d, .decoracion2-3d, .decoracion3-3d, .decoracion4-3d {
     animation: flotar3D 4s ease-in-out infinite;
 }
 
@@ -216,12 +236,13 @@ header p {
 
 /* Diseño del formulario emergente */
 #modal-formulario {
+    position: relative;
     background: #ffffff;
     padding: 30px 20px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     max-width: 400px;
-    margin: 30px auto;
+    margin: 30px auto 100px auto;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -239,6 +260,26 @@ header p {
 #modal-formulario textarea {
     resize: vertical;
     min-height: 100px;
+}
+
+#modal-formulario h3 {
+    color: #FF98C7;
+}
+
+.button_cancelar {
+    border-radius: 80px;
+    border: none;
+    color: white;
+    background-color: #FE5C2B;
+    padding: 5px;
+}
+
+.button_enviar {
+    border-radius: 80px;
+    border: none;
+    color: white;
+    background-color: #FF98C7;
+    padding: 5px;
 }
 
 /* Selecciona solo las tarjetas pares (las de la derecha) y las gira al lado contrario */
