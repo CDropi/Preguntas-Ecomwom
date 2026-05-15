@@ -15,12 +15,12 @@ async function iniciarCarga() {
         listaPreguntas = await response.json();
 
         // Validamos que haya al menos 4 preguntas para jugar
-        if(listaPreguntas.length < 4) {
-            container.innerHTML = `<p>Aún no hay suficientes preguntas para ${ponente}. (Hay ${listaPreguntas.length}/4)</p>`;
+        if(listaPreguntas.length === 0) {
+            container.innerHTML = `<p>Aún no hay preguntas registradas para ${ponente}.</p>`;
             return;
         }
 
-        // Si hay 4 o más, procedemos a seleccionar
+        // Si hay 1 o más, procedemos a seleccionar
         seleccionarAleatorias();
         
     } catch (error) {
