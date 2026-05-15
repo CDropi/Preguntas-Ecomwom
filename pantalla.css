@@ -1,7 +1,21 @@
+@font-face {
+    font-family: 'MazzardRegularEcomwom';
+    src: url('Recursos/MazzardH-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AminuteEcomwom';
+    src: url('Recursos/Aminute.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    background-color: #0a0a0a;
+    background-color: #F4DCFC;
     color: white;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'MazzardRegularEcomwom', Roboto, sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,30 +26,91 @@ body {
 }
 
 #container {
-    width: 90%;
-    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    width: 800px;
+    margin: 0 auto;
+    z-index: 1;
 }
 
-.pregunta-item {
-    background: rgba(255, 255, 255, 0.05);
-    border-left: 10px solid #1a73e8;
-    padding: 40px;
-    margin-bottom: 30px;
-    border-radius: 15px;
+.RayoP {
+    position: absolute;
+    top: 35px;
+    left: 15px;
+    width: 100px;
+    height: auto;
+    transform: rotate(6deg);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.LogoE {
+    position: absolute;
+    width: 200px;
+    top: 30px;
+    pointer-events: none;
+}
+
+.Forma3D {
+    position: absolute;
+    width: 100px;
+    bottom: 10px;
+    right: 10px;
+    pointer-events: none;
+}
+
+.RayoP, .Forma3D {
+    animation: flotar3D 4s ease-in-out infinite;
+}
+
+@keyframes flotar3D {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(15deg); } /* Sube un poquito y gira levemente */
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.tarjeta-pantalla {
+    background: #FFFFFF;
+    padding: 10px 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; 
+    position: relative;
     animation: fadeIn 1s ease-in-out;
 }
 
-.pregunta-item h2 {
-    font-size: 24px;
-    color: #1a73e8;
-    margin: 0 0 15px 0;
+.nombre-pregunta {
+    color: #FE5C2B;
+    font-family: 'AminuteEcomwom', sans-serif;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
 }
 
-.pregunta-item p {
-    font-size: 48px;
-    font-weight: bold;
+.recuadro-gris {
+    background: #EAEAEA;
+    border-radius: 10px;
+    padding: 15px 7px;
+    width: 100%; 
+}
+
+.recuadro-gris p {
+    color: #252324;
+    font-family: 'MazzardRegularEcomwom', sans-serif;
+    font-size: 15px;
     margin: 0;
-    line-height: 1.2;
+    text-align: center;
+    line-height: 1.4;
+
+    word-break: break-word; /* Evita que palabras sin espacios o links rompan la caja a lo ancho */
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* ¡EL TRUCO! Máximo 5 líneas de texto por pregunta */
+    -webkit-box-orient: vertical;
+    overflow: hidden; /* Oculta el resto del testamento */
 }
 
 @keyframes fadeIn {

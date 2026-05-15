@@ -26,9 +26,11 @@ async function actualizarPantalla() {
                 preguntas.forEach(p => {
                     if(p.nombre && p.pregunta) {
                         container.innerHTML += `
-                            <div class="pregunta-item">
-                                <h2>${p.nombre} pregunta:</h2>
-                                <p>"${p.pregunta}"</p>
+                            <div class="tarjeta-pantalla">
+                                <h3 class="nombre-pregunta">${p.nombre}</h3>
+                                <div class="recuadro-gris">
+                                    <p>"${p.pregunta}"</p>
+                                </div>
                             </div>`;
                     }
                 });
