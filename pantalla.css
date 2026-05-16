@@ -38,7 +38,7 @@ body {
     position: absolute;
     top: 35px;
     left: 15px;
-    width: 100px;
+    width: 10vw;
     height: auto;
     transform: rotate(6deg);
     z-index: 0;
@@ -47,14 +47,14 @@ body {
 
 .LogoE {
     position: absolute;
-    width: 200px;
+    width: 20vw;
     top: 30px;
     pointer-events: none;
 }
 
 .Forma3D {
     position: absolute;
-    width: 100px;
+    width: 10vw;
     bottom: 10px;
     right: 10px;
     pointer-events: none;
