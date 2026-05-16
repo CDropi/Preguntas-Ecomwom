@@ -86,7 +86,7 @@ body {
 .nombre-pregunta {
     color: #FE5C2B;
     font-family: 'AminuteEcomwom', sans-serif;
-    font-size: 20px;
+    font-size: 2.2vw;
     margin: 0;
     text-align: center;
 }
@@ -101,7 +101,7 @@ body {
 .recuadro-gris p {
     color: #252324;
     font-family: 'MazzardRegularEcomwom', sans-serif;
-    font-size: 15px;
+    font-size: 1.8vw;
     margin: 0;
     text-align: center;
     line-height: 1.4;
