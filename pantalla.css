@@ -28,8 +28,8 @@ body {
 #container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 35px;
-    width: 800px;
+    gap: 3vw;
+    width: 90%;
     margin: 0 auto;
     z-index: 1;
 }
